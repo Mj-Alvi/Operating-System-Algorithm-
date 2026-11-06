@@ -1,7 +1,6 @@
 # Priority Scheduling - Preemptive
 
 n = int(input("Enter number of processes: "))
-
 processes = []
 for i in range(n):
     print("Process P" + str(i + 1))
@@ -60,7 +59,6 @@ for t in range(1, len(timeline) + 1):
 
 print(chart)
 
-
 # Process Table
 print(f"\n{'PID':<6}{'AT':<6}{'BT':<6}{'PR':<6}{'CT':<6}{'TAT':<6}{'WT':<6}{'RT':<6}")
 
@@ -68,17 +66,11 @@ for p in processes:
     print(f"{p['pid']:<6}{p['arrival']:<6}{p['burst']:<6}{p['priority']:<6}"
           f"{p['completion']:<6}{p['turnaround']:<6}{p['waiting']:<6}{p['response']:<6}")
 
-
 # Average Times
 avg_tat = sum(p["turnaround"] for p in processes) / n
 avg_wt = sum(p["waiting"] for p in processes) / n
 avg_rt = sum(p["response"] for p in processes) / n
 
-# CPU Utilization
-total_burst = sum(p["burst"] for p in processes)
-cpu_utilization = (total_burst / current_time) * 100
-
 print("\nAverage Turnaround Time =", round(avg_tat, 2))
 print("Average Waiting Time    =", round(avg_wt, 2))
 print("Average Response Time   =", round(avg_rt, 2))
-print("CPU Utilization         =", round(cpu_utilization, 2), "%")
