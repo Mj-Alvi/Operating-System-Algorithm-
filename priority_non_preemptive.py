@@ -2,7 +2,6 @@
 
 n = int(input("Enter number of processes: "))
 processes = []
-
 for i in range(n):
     print("Process P" + str(i + 1))
     arrival = int(input("  Arrival time: "))
